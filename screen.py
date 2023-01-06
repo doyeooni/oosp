@@ -9,7 +9,7 @@ root.resizable(True,True)
 
 def click():
     root.destroy()
-    import nextscreen
+    import nextpage
     
 btn1 = Button(root, text="시작하기")
 btn1.config(command=click)
