@@ -35,7 +35,7 @@ def sorted_alphanumeric(data):
 # defining the size of the image
 SIZE = 160
 color_img = []
-path = 'C:/oosp'
+path = 'C:/oosp/oosp'
 files = os.listdir(path)
 files = sorted_alphanumeric(files)
 for i in tqdm(files):    
@@ -52,11 +52,11 @@ for i in tqdm(files):
 
 
 gray_img = []
-path = 'C:/oosp'
+path = 'C:/oosp/oosp'
 files = os.listdir(path)
 files = sorted_alphanumeric(files)
 for i in tqdm(files):
-     if i == '6000.jpg':
+     if i == 'dog.jpg':
         break
      else: 
         img = cv2.imread(path + '/'+i,1)
