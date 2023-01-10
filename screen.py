@@ -6,6 +6,9 @@ root = Tk()
 
 root.geometry("1000x1200")
 
+#창 제목 설정
+root.title('사진 필터 변환 프로그램')
+
 def click():
     root.destroy()
     import nextpage
