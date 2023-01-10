@@ -4,8 +4,11 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 from matplotlib import colors
+import matplotlib.pyplot as plt
+from PIL import Image, ImageFilter
 
 import cv2
+
 
 import os
 print(os.listdir("C:/Users/Do Yeon/oosp/oosp"))
@@ -57,3 +60,21 @@ blue[:, :, 1] = 0
 # RGB - Blue
 plt.imshow(blue)
 plt.show()
+
+#블러처리 구현
+
+def plotFigures(original_image, blurred_image):
+    plt.figure(figsize=(10,10))
+    plt.subplot(121)
+    plt.imshow(cv2.cvtColor(original_image,cv2.COLOR_BGR2RGB))
+    plt.title('Original')
+    plt.xticks([]), plt.yticks([])
+
+    plt.subplot(122)
+    plt.imshow(cv2.cvtColor(blurred_image,cv2.COLOR_BGR2RGB))
+    plt.title('Blurred')
+    plt.xticks([]), plt.yticks([])
+    plt.show()
+
+blurI = cv2.blur(whale, (5,5))
+plotFigures(whale,blurI)
