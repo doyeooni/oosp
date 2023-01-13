@@ -57,4 +57,53 @@ btn3.place(x=1,y=1)
 #불러온 사진 추가
 
 
+#블러 효과 1번으로 페이지 이동
+def blurred_ver_1():
+    root.destroy()
+    import Blurred_first
+
+
+#블러 효과 1번 버튼 구현
+blur_btn1 = tk.Button(root, text='Blurred_ver.1',command=blurred_ver_1, width =10, height = 2)
+blur_btn1.place(x=200, y=600)
+
+
+#블러 효과 2번으로 페이지 이동
+def blurred_ver_2():
+    root.destroy()
+    import Blurred_second
+
+#블러 효과 2번 버튼 구현
+blur_btn2 = tk.Button(root,text = 'Blurred_ver.2', command=blurred_ver_2, width = 10, height = 2)
+blur_btn2.place(x=300, y=600)
+
+
+#어두움 효과로 페이지 이동
+def Darkness():
+    root.destroy()
+    import Darkness
+
+#어두움 버튼 구현
+bright_btn1 = tk.Button(root, text='Darkness', command = Darkness, width=12, height=2)
+bright_btn1.place(x=400, y=600)
+
+#밝기 효과로 페이지 이동
+def Brightness():
+    root.destroy()
+    import Brightness
+
+#밝기 효과 버튼 구현
+bright_btn2 = tk.Button(root, text='Brightness', command = Brightness, width=12, height=2)
+bright_btn2.place(x=510, y=600)
+
+#자동 보정 효과로 페이지 이동
+def auto():
+    root.destroy()
+    import Auto
+
+#자동 보정 효과 버튼 구현
+auto_btn = tk.Button(root, text='Auto', command = auto, width=10, height=2)
+auto_btn.place(x=620,y=600)
+
+
 root.mainloop()
