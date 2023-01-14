@@ -10,7 +10,7 @@ import cv2
 import os
 import tkinter as tk
 from tkinter import filedialog
-from PIL import ImageTk, Image
+from PIL import ImageTk, Image, ImageEnhance
 from tkinter import *
 import numpy as np
 
@@ -22,18 +22,14 @@ img = cv2.imread(img_path+'/'+"sea.png")
 
 def Bright(original_image):
     plt.figure(figsize=(5,5))
-    alpha = 1.0
-    plt.subplot(121)
-    plt.imshow(cv2.cvtColor(original_image,cv2.COLOR_BGR2RGB))
-    plt.title('Original')
-    plt.xticks([]), plt.yticks([])
 
-    bright = np.clip((1+alpha) * img - 128 * alpha, 0, 255).astype(np.uint8)
+    val = 50
+    array = np.full(img.shape, (val,val,val), dtype=np.uint8)
     
-    plt.subplot(122)
-    plt.imshow(bright)
-    plt.title('Brightness')
-    plt.xticks([]), plt.yticks([])
-    plt.show()
+    add = cv2.add(img, array)
+    numpy_horizontal = np.hstack((img, add))
+
+    cv2.imshow('Brightness', numpy_horizontal)
 
 Bright(img)
+cv2.waitKey()
