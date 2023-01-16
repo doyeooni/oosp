@@ -11,7 +11,7 @@ from tkinter.font import Font
 root=Tk()
 
 #배경 색 지정
-root['bg'] = '#FAF0E6'
+root['bg'] = '#F5FFFA'
 
 #타이틀 이름 설정
 root.title('NextPage')
@@ -20,7 +20,7 @@ root.title('NextPage')
 root.geometry("1000x1000")
 
 my_font = Font(
-    family = 'Times',
+    family = 'Consolas',
     size = 23,
     weight = 'bold',
     slant = 'roman',
@@ -28,23 +28,23 @@ my_font = Font(
 )
 
 sub_font = Font(
-    family = 'Tiems',
+    family = 'Consolas',
     size = 12,
     weight = 'bold',
     slant = 'roman'
 )
 
 main_font = Font(
-    family = 'Times',
+    family = 'Consolas',
     size = 10,
     weight = 'bold',
     underline = 0
 )
 
 #제목 설정
-lab1 = tk.Label(root, text="Image Filter Convert Program", foreground="black", background="white", font=my_font)
+lab1 = tk.Label(root, text=" Image Filter Convert Program ", foreground="black", background="white", font=my_font, relief='solid')
 lab1.pack()
-lab1.place(x=280, y=1)
+lab1.place(x=250, y=1)
 
 #첫화면으로 이동하는 함수
 def click():
@@ -55,6 +55,8 @@ def click():
 file_img=tk.PhotoImage(file="C:/Users/Do Yeon/oosp/oosp/home_icon.png")
 file_icon=tk.PhotoImage(file="C:/Users/Do Yeon/oosp/oosp/file_icon.png")
 nextpage_img = tk.PhotoImage(file="C:/Users/Do Yeon/oosp/oosp/nextpage_img.png")
+quit_icon = tk.PhotoImage(file="C:/Users/Do Yeon/oosp/oosp/quit_icon.png")
+back_icon = tk.PhotoImage(file="C:/Users/Do Yeon/oosp/oosp/back_icon.png")
 
 
 #파일을 불러오고 업로드하는 함수 구현
@@ -78,12 +80,6 @@ def open_file():
     #Label(image=my_image).pack() #사진 view
 
 
-
-my_btn = Button(root, command=open_file, image=file_icon)
-my_btn.place(x=50,y=1)
-
-
-''''''
 #첫화면으로 이동하는 버튼 구현
 btn3 = tk.Button(root, image=file_img, command=click, width=40, height=40)
 btn3.pack(expand=1, anchor=CENTER)
@@ -98,8 +94,21 @@ btn3.place(x=1,y=1)
 #문구 라벨 추가
 lb = tk.Label(root, text='Click the Filter YOU WANT!', font = sub_font, foreground= 'white', background= 'black')
 lb.pack()
-lb.place(x=130, y= 70)
+lb.place(x=380, y= 70)
 
+#종료 버튼 추가 및 구현
+quit_btn = tk.Button(root, image = quit_icon, width = 40, height = 40)
+quit_btn.pack(expand=1, anchor=NE)
+quit_btn.config(command = quit)
+
+#뒤로가기 함수 구현
+def back():
+    root.destroy()
+    import midpage
+
+#뒤로가기 버튼 추가
+back_btn = tk.Button(root, image = back_icon, command = back, width = 40, height = 40)
+back_btn.place(x=50,y=1)
 
 #블러 효과 1번으로 페이지 이동
 def blurred_ver_1():
@@ -108,12 +117,12 @@ def blurred_ver_1():
 
 
 #블러 효과 1번 버튼 구현
-blur_btn1 = tk.Button(root, text='Blurred_ver.1', font = main_font, command=blurred_ver_1, width =15, height = 5)
+blur_btn1 = tk.Button(root, text='Blurred_ver.1', font = main_font, command=blurred_ver_1, width =15, height = 5, relief= 'solid', background='#FFF5EE')
 blur_btn1.place(x=150, y=120)
 
 
 #블러 효과 1번 설명 라벨 추가
-blur_lab = tk.Label(root, text = '사진을 블러 처리해주는 효과로, 1번은 약한 효과를 가지고 있습니다.', wraplength=100 , foreground='black'
+blur_lab = tk.Label(root, text = '사진을 블러 처리해주는 효과', wraplength=100 , foreground='black'
 , background= 'white')
 blur_lab.pack()
 blur_lab.place(x=280, y= 125)
@@ -124,12 +133,12 @@ def blurred_ver_2():
     import Blurred_second
 
 #블러 효과 2번 버튼 구현
-blur_btn2 = tk.Button(root,text = 'Blurred_ver.2', font = main_font, command=blurred_ver_2, width = 15, height = 5)
+blur_btn2 = tk.Button(root,text = 'Blurred_ver.2', font = main_font, command=blurred_ver_2, width = 15, height = 5, relief= 'solid', background='#FFF5EE')
 blur_btn2.place(x=550, y=120)
 
 
 #블러 효과 2번 설명 라벨 추가
-blur_lab2 = tk.Label(root, text='사진을 블러 처리해주는 효과로, 2번은 더 강한 효과를 가지고 있습니다.', wraplength=100, foreground='black', background='white')
+blur_lab2 = tk.Label(root, text='사진을 블러 처리해주는 효과', wraplength=100, foreground='black', background='white')
 blur_lab2.pack()
 blur_lab2.place(x=680, y=125)
 
@@ -139,12 +148,12 @@ def Darkness():
     import Darkness
 
 #어두움 버튼 구현
-darkness_btn = tk.Button(root, text='Darkness', font = main_font, command = Darkness, width=15, height=5)
+darkness_btn = tk.Button(root, text='Darkness', font = main_font, command = Darkness, width=15, height=5, relief= 'solid', background='#FFF5EE')
 darkness_btn.place(x=150, y=260)
 
 
 #어두움 효과 설명 라벨 추가
-darkness_lab = tk.Label(root, text = '사진을 어둡게 처리해주는 효과입니다.', wraplength=100, foreground= 'black', background='white')
+darkness_lab = tk.Label(root, text = '사진을 어둡게 처리해주는 효과', wraplength=100, foreground= 'black', background='white')
 darkness_lab.pack()
 darkness_lab.place(x=280, y= 265)
 
@@ -154,11 +163,11 @@ def Brightness():
     import Brightness
 
 #밝기 효과 버튼 구현
-bright_btn2 = tk.Button(root, text='Brightness', font = main_font, command = Brightness, width=15, height=5)
+bright_btn2 = tk.Button(root, text='Brightness', font = main_font, command = Brightness, width=15, height=5, relief= 'solid', background='#FFF5EE')
 bright_btn2.place(x=550, y=260)
 
 #밝기 효과 설명 라벨 추가
-brightness_lab = tk.Label(root, text = '사진을 밝게 처리해주는 효과입니다.', wraplength=100, background='white', foreground='black')
+brightness_lab = tk.Label(root, text = '사진을 밝게 처리해주는 효과', wraplength=100, background='white', foreground='black')
 brightness_lab.pack()
 brightness_lab.place(x=680, y=265)
 
@@ -168,11 +177,11 @@ def definition():
     import Auto
 
 #엣지 효과 버튼 구현
-definition_btn = tk.Button(root, text='Definition', font = main_font, command = definition, width=15, height=5)
+definition_btn = tk.Button(root, text='Definition', font = main_font, command = definition, width=15, height=5, relief= 'solid', background='#FFF5EE')
 definition_btn.place(x=150,y=400)
 
 #엣지 효과 설명 라벨 추가
-edge_lab = tk.Label(root, text = '사진을 선명하게 만들어주는 효과입니다. ', wraplength=100, background='white', foreground='black')
+edge_lab = tk.Label(root, text = '사진을 선명하게 만들어주는 효과', wraplength=100, background='white', foreground='black')
 edge_lab.pack()
 edge_lab.place(x=280, y= 410)
 
