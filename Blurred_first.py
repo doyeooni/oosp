@@ -20,7 +20,7 @@ whale = cv2.imread(img_path+'/'+"dog.jpg")
 
 #블러처리 구현
 def plotFigures(original_image, blurred_image):
-    plt.figure(figsize=(50,50))
+    plt.figure(figsize=(5,5))
     plt.subplot(121)
     plt.imshow(cv2.cvtColor(original_image,cv2.COLOR_BGR2RGB))
     plt.title('Original')
