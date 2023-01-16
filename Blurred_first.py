@@ -14,7 +14,7 @@ from PIL import ImageTk, Image
 from tkinter import *
 
 img_path='C:/Users/Do Yeon/oosp/oosp'
-whale = cv2.imread(img_path+'/'+"dog.jpg")
+whale = cv2.imread(img_path+'/'+"dog.png")
 
 
 
