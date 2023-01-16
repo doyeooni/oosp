@@ -18,7 +18,7 @@ img_path='C:/Users/Do Yeon/oosp/oosp'
 
 
 #어두움 조절 구현
-img = cv2.imread(img_path+'/'+"sea.png", cv2.IMREAD_COLOR)
+img = cv2.imread(img_path+'/'+"dog.png", cv2.IMREAD_COLOR)
 
 def Darkness(original_image):
     val = 100
