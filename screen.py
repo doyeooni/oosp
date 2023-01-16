@@ -8,14 +8,18 @@ root = Tk()
 root.geometry("1000x1200")
 
 #창 제목 설정
-root.title('사진 필터 변환 프로그램')
+root.title('Image Filter Convert Program')
 
+#배경 색 지정
+root['bg'] = '#F5FFFA'
+
+#페이지 이동 함수 구현
 def click():
     root.destroy()
-    import nextpage
+    import midpage
 
 my_font = Font(
-    family = 'Times',
+    family = 'Consolas',
     size = 23,
     weight = 'bold',
     slant = 'roman',
@@ -31,9 +35,9 @@ sub_font = Font(
 )
 
 #제목 설정
-lab1 = ttk.Label(root, text="사진 필터 변환 프로그램",padding=(40,0), foreground="black", background="white", font=my_font)
+lab1 = ttk.Label(root, text="Image Filter Convert Program",padding=(40,0), foreground="black", background="white", font=my_font, relief='solid')
 lab1.pack()
-lab1.place(x=300, y=10)
+lab1.place(x=240, y=10)
 
 #다음페이지로 넘겨주는 버튼 구현
 btn1 = Button(root, text ='START', width=10, height = 2, font = sub_font)
