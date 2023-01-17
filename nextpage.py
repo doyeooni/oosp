@@ -185,9 +185,25 @@ edge_lab = tk.Label(root, text = '사진을 선명하게 만들어주는 효과'
 edge_lab.pack()
 edge_lab.place(x=280, y= 410)
 
+#RGB 효과 페이지 이동
+def RGB():
+    root.destroy()
+    import rgb
+
+#RGB 효과 버튼 구현
+rgb_btn = tk.Button(root, text='RGB', font = main_font, command = RGB , width = 15, height=5, relief='solid', background='#FFF5EE')
+rgb_btn.place(x=550, y=400)
+
+#RGB 효과 설명 라벨 추가
+rgb_lab = tk.Label(root, text='사진을 빨강, 초록, 파랑인 삼색의 필터로 바꿔주는 효과', wraplength=100, background='white', foreground='black')
+rgb_lab.pack()
+rgb_lab.place(x=680, y=400)
+
+
 #밑 부분 사진 추가
 bottom_lab = tk.Label(root, image = nextpage_img)
 bottom_lab.pack(expand = 1, anchor=SW)
+
 
 
 root.mainloop()
