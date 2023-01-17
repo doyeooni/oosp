@@ -16,17 +16,20 @@ from tkinter import *
 
 
 
-'''
-print(os.listdir("C:/Users/Do Yeon/oosp/oosp"))
+
+#print(os.listdir("C:/Users/Do Yeon/oosp/oosp"))
 
 #이미지 여러 개를 출력하고 싶을 때 -> matplotlib의 subplot을 이용해야 함
 
 
 img_path='C:/Users/Do Yeon/oosp/oosp'
+#whale = cv2.imread(img_path+'/'+"dog.jpg")
+
+
+#img_path='C:/Users/Do Yeon/oosp/oosp'
 #whale_image_list=os.listdir(img_path)
 #whale_image_list[0:10]
 
-row = 
 flags = [i for i in dir(cv2) if i.startswith('COLOR_')]
 
 len(flags)
@@ -97,15 +100,6 @@ def plotFigures(original_image, blurred_image):
 
 blurI = cv2.blur(whale, (10,10))
 plotFigures(whale,blurI)
-
-
-#밝기 조절 구현
-def brightness(original_image, brightness_image):
-
-'''
-
-img_path='C:/Users/Do Yeon/oosp/oosp'
-whale = cv2.imread(img_path+'/'+"dog.jpg")
 
 
 
