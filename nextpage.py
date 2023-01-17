@@ -174,7 +174,7 @@ brightness_lab.place(x=680, y=265)
 #선명도 효과로 페이지 이동
 def definition():
     root.destroy()
-    import Auto
+    import Edge
 
 #엣지 효과 버튼 구현
 definition_btn = tk.Button(root, text='Definition', font = main_font, command = definition, width=15, height=5, relief= 'solid', background='#FFF5EE')

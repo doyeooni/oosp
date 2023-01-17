@@ -73,3 +73,4 @@ def Bright(original_image):
 
 Bright(img)
 cv2.waitKey()
+cv2.destroyAllWindows()

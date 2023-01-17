@@ -55,3 +55,4 @@ def Darkness(original_image):
 
 Darkness(img)
 cv2.waitKey()
+cv2.destroyAllWindows()
